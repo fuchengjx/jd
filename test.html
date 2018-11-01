@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+.container{
+    display: -moz-box;
+    display: -webkit-box;
+    width: 1200px;
+    height: 1200px;
+}
+        .left{
+            -moz-box-flex: 1;
+            -webkit-box-flex: 1;
+            background: #0A8CD2;
+        }
+        .center{
+            -moz-box-flex: 3;
+            -webkit-box-flex: 3;
+            background: #0b8043;
+        }
+        .right{
+           width: 200px;
+            background: red;
+        }
+        img{
+           float: right;
+        }
+    </style>
+</head>
+<body>
+<div id="container" class="container">
+     <div class="left"></div> 
+    <div class="center">
+        <p>uifdshahassssssssssssssssssssssssssssssssssssssssssssssssssssssfadsfhasuih</p>
+        <img src="images/pic1.jpg">
+        <p>suih</p>
+    </div>
+<div class="right"></div>
+</div>
+<script>
+        let div=document.createElement("div");
+        div.id="box";
+        document.getElementById('container').appendChild(div);
+        document.querySelector(".center").firstChild.nodeValue="fff";
+        // for(var i=0;i<3;i++){
+        //     (function () {
+        //         var i='abc';
+        //         console.log(i);
+        //     }());
+        //     console.log(i);
+        // }
+        //     if(confirm("Are you ok?")){
+        //         alert("ok");
+        //     }else{
+        //         alert("hh");
+        //     }
+
+// function hasPlugin(name) {
+//     name=name.toLowerCase();
+//     for(var i=0;i<navigator.plugins.length;i++){
+//         if (navigator.plugins[i].name.toLowerCase().indexOf(name)>-1){
+//             return true;
+//         }
+//     }
+// }
+// alert(hasPlugin("Flash"));
+window.onload=function () {
+var sheet=document.styleSheets[0];
+var rules=sheet.cssRules||sheet.rules;
+for (var i=0;i<10;i++){
+    var rule=rules[i];
+    alert(rule.style.cssText);
+}
+
+
+
+}
+
+
+</script>
+</body>
+</html>

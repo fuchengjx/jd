@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>movie</title>
+    <link rel="stylesheet" href="css/nprogress.css">
+</head>
+<body>
+<table id="demo">
+    <tr>
+        <td>电影海报</td>
+        <td>电影名称</td>
+        <td>电影类别</td>
+        <td>出品年份</td>
+    </tr>
+</table>
+<!--<script id="tmpl" type="text/x-art-template">-->
+    <!--{{each comments}}-->
+    <!--&lt;!&ndash; each 内部 $value 拿到的是当前被遍历的那个元素 &ndash;&gt;-->
+    <!--<tr>-->
+        <!--<td>{{$value.subjects.title}}</td>-->
+        <!--<td>{{$value.name}}</td>-->
+        <!--<td>{{$value.count}}</td>-->
+    <!--</tr>-->
+    <!--{{/each}}-->
+<!--</script>-->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/template-web.js"></script>
+<script src="js/nprogress.js"></script>
+<script src="js/jquery.lazyload.js"></script>
+<script>
+    // window.onload=function () {
+    //     var xhr = new XMLHttpRequest();
+    //     xhr.open("GET","php/movie.php");
+    //     xhr.send();
+    //     xhr.onreadystatechange = function () {
+    //         if (this.readyState === 4)
+    //             if (this.status===200){
+    //                 console.log("hhh")
+    //                 var res = JSON.parse(xhr.responseText)
+    //
+    //
+    //             }
+    //     }
+    // }
+$(function () {
+
+    NProgress.start();
+    NProgress.done();
+
+    $.ajax({
+        url:"php/movie.php",
+        type:"get",
+        datatype:"json",
+        success:function (data) {
+            data:data;   //返回的是一个json字符串
+            // var context = { coments:data.data };
+            // var html = template('tmpl',context);
+            // document.getElementById('demo').innerHTML=html;
+            // for (var i=0;i<data.length;i++)
+            // {
+            //     titles[i]=data.subjects.title[i];
+            //     console.log(titles[i]);
+            // }
+
+            obj =JSON.parse(data);
+
+            var titles = new Array();
+            var imgs = new Array();
+            var genres0=new Array();
+            var genres1=new Array();
+            var years=new Array();
+            for (var i=0;i<obj.subjects.length;i++)
+            {
+                titles[i]=obj.subjects[i].title;
+                imgs[i]=obj.subjects[i].images.small;
+                genres0[i]=obj.subjects[i].genres[0];
+                genres1[i]=obj.subjects[i].genres[1];
+                years[i]=obj.subjects[i].year;
+                $("<tr>" +
+                    "<td><img src="+imgs[i]+"> </td>" + "<td>"+titles[i]+"</td>" +
+                    "<td>"+genres0[i]+"、"+genres1[i]+"</td>" +
+                    "<td>"+years[i]+"</td>" +
+                    "</tr>").appendTo("#demo");
+            }
+
+        },
+        error:function (err) {
+            alert(err);
+        }
+    })
+})
+
+
+
+    // 跨域访问无效
+// window.onload=function () {
+//     var xhr = new XMLHttpRequest();
+//     xhr.open("GET","http://api.douban.com/v2/movie/top250");
+//     xhr.send();
+//     xhr.onreadystatechange = function () {
+//         if (this.readyState === 4)
+//             if (this.status===200){
+//                 var res = JSON.parse(this.responseText);
+//                 alert(res);
+//                 for (i=0;i++;i<10)
+    //                 {
+    //                      titles[i]=res.title[i];
+    //                     console.log(titles[i]);
+    //                 }
+//             }
+//     }
+// }
+
+
+    // $(function () {
+    //     $.ajax({
+    //         type:"get",
+    //         async:false,
+    //         url:"http://api.douban.com/v2/movie/top250",
+    //         dataType:"jsoncallback",
+    //         jsonpCallback:"success_jsonpCallback",
+    //         success:function () {
+    //          alert(json);
+    //          }
+    //     })
+    // })
+    // $.getJSON("http://api.douban.com/v2/movie/top250",
+    //     function (data) {
+    //         alert(data);
+    //     }
+    // );
+
+    // jQuery(document).ready(function(){
+    //     $.ajax({
+    //
+    //         type : "get", //jquey是不支持post方式跨域的
+    //
+    //         async:false,
+    //
+    //         url : "http://api.douban.com/v2/movie/top250", //跨域请求的URL
+    //
+    //         dataType : "jsonp",
+    //
+    //         //传递给请求处理程序，用以获得jsonp回调函数名的参数名(默认为:callback)
+    //
+    //         jsonp: "jsoncallback",
+    //
+    //         //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+    //
+    //         jsonpCallback:"success_jsonpCallback",
+    //
+    //         //成功获取跨域服务器上的json数据后,会动态执行这个callback函数
+    //
+    //         success : function(json){
+    //
+    //             alert(json);
+    //         }
+    //     });
+    // });
+    //
+    //
+    // $.getJSON("http://api.douban.com/v2/movie/top250&jsoncallback=?",
+    //     function (data) {
+    //         alert(data);
+    //     }
+    // );
+
+    //jsonp跨域获取的数据不完整
+    // $.ajax({
+    //     async : true,
+    //     url : "http://api.douban.com/v2/movie/top250",
+    //     type : "GET",
+    //     dataType : "jsonp", // 返回的数据类型，设置为JSONP方式
+    //     jsonp : 'callback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
+    //     jsonpCallback: 'handleResponse', //设置回调函数名
+    //     data : {
+    //         q : "javascript",
+    //         count : 1
+    //     },
+    //     success: function(response, status, xhr){
+    //         console.log('状态为：' + status + ',状态是：' + xhr.statusText);
+    //         console.log(response);
+    //     }
+    // });
+    //
+    // $.getJSON("http://api.douban.com/v2/movie/top250?q=javascript&count=1&callback=?", function(data){
+    //     console.log(data);
+    // });
+</script>
+</body>
+</html>
