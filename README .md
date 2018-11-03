@@ -11,7 +11,7 @@ index页面:
 ****
 
 ##项目包括
-![](C:\Users\ddd\Desktop\web前后端\jd\readme\1.png)
+![](http://github.com/fuchengjx/jd/raw/master/readme/1.png)
 
 整个项目我采用了html，css，js，php，mysql等技术。
 
@@ -19,12 +19,12 @@ index页面:
 
 使用了采用现行网站开发比较流行的技术，在元标签内有各种网页关键信息，定义了这是一个电商网站，url栏title内有自定义的图标
 
-![元标签](C:\Users\ddd\Desktop\web前后端\jd\readme\2.png)
+![元标签](http://github.com/fuchengjx/jd/raw/master/readme/2.png)
 
 
 
 
-![f](C:\Users\ddd\Desktop\web前后端\jd\readme\3.png)
+![f](http://github.com/fuchengjx/jd/raw/master/readme/3.png)
 
 有些图标部分采用的是字体标签，这样可以减少图标图片，减小网页的大小。（这个广告的x可以将广告关闭）
 
@@ -32,7 +32,7 @@ index页面:
 
 绝大多数背景图片用的是精灵图，这样一张图片加载后，可以给多个标签做背景图，比把多张小图合在一起更节省内存。
 
-![精灵图](C:\Users\ddd\Desktop\web前后端\jd\images\sprite_fs@1x.png)
+![精灵图](http://github.com/fuchengjx/jd/raw/master/readme/sprite_fs@1x.png)
 
 
 
@@ -42,11 +42,11 @@ index主页用了一个懒加载的jquery插件，它能在网页载入多张图
 
 
 
-![](C:\Users\ddd\Desktop\web前后端\jd\readme\4.png)
+![](http://github.com/fuchengjx/jd/raw/master/readme/4.png)
 
 ###其它页面
 
-![链接](C:\Users\ddd\Desktop\web前后端\jd\readme\5.png)
+![链接](http://github.com/fuchengjx/jd/raw/master/readme/5.png)
 
 因为时间紧，我就只写了这几个链接，一个注册页面（register.html），一个登陆（login.html）,一个电影（movie.html  这个真的丑不解释），一个游戏链接（这个是我以前做项目做的js原生的贪吃蛇）.
 
@@ -64,8 +64,8 @@ index主页用了一个懒加载的jquery插件，它能在网页载入多张图
 
 
 
-要想体验完整的网站效果可以到我的个人网站
-[](我的个人网站 "www.fucheng360.top")
+要想体验完整的网站效果可以到我的个人网站(时间过长链接可能无效)
+[](我的个人网站 "www.fucheng360.top") 
 
 ***
 
