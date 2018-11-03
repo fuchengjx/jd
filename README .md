@@ -2,7 +2,7 @@
 
 index页面:
 
-![index页面](C:\Users\ddd\Desktop\web前后端\jd\readme\index.png)
+![index页面](http://github.com/fuchengjx/jd/raw/master/readme/index.png)
 
 这个页面是仿照京东主页写的前端页面。
 
@@ -21,7 +21,6 @@ index页面:
 
 ![元标签](C:\Users\ddd\Desktop\web前后端\jd\readme\2.png)
 
-整个页面骨架用的是接近生产环境的骨架与css（迷之自信，估摸着还差的远o(╯□╰)o）
 
 
 
